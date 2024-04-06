@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo"> <img src="#" alt="">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li> <a href="#"> Home</a></li>
+                    <li> <a href="#"> Project</a></li>
+                    <li> <a href="#"> Contact</a></li>
+                </ul>
+
+            </div>
+        </nav> 
+        <div class="information">
+            <div class="overlay">
+                
+            </div>
+            <img src="https://github.com/ExxxOnn/image-dump/blob/main/images-removebg-preview.png?raw=true" alt="mobile" class="mobile">
+            <img src="https://github.com/ExxxOnn/image-dump/blob/main/unnamed-removebg-preview.png?raw=true" alt="mobile2" class="mobile2">
+
+            <div id="circle">
+                <div class="feature one">
+                    <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-fighting-90.png?raw=true">
+                    <div>
+                        <h1>Suka KDRT</h1>
+                        <p>Lo nyari pasangan atau lawan</p>
+                    </div>
+                </div>
+                <div class="feature two">
+                    <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-reading-100 (1).png?raw=true">
+                    <div>
+                        <h1>Bisa Ngaji</h1>
+                        <p>Kaga harus hapal Juz</p>
+                        <br>
+                        <p1>yang penting jangan Qul<sup>2</sup> Mulu</p1>
+                    </div>
+                </div>
+                <div class="feature three">
+                    <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-no-smoking-100.png?raw=true">
+                    <div>
+                        <h1>Suka Rokok</h1>
+                        <p>Sesak napas bjir</p>
+                    </div>
+                </div>
+                <div class="feature four">
+                    <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-love-100.png?raw=true">
+                    <div>
+                        <h1>Penyayang</h1>
+                        <p>Tapi ke aku doang</p>
+                        <br>
+                        <p1>...kalo bisa ke bias ku juga hehe</p1>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div>
+            <div class="controls">
+                <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-up-arrow-64.png?raw=true" id="upBtn">
+                <h3>Features</h3>
+                <img src="https://github.com/ExxxOnn/image-dump/blob/main/icons8-up-arrow-64.png?raw=true" id="downBtn">
+            </div>
+        </div> 
+    </div>
+    <Script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotateValue = circle.style.transform;
+        var rotateSum;
+
+        upBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+
+        downBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+        var mobile1 = document.querySelector(".mobile");
+        var mobile2 = document.querySelector(".mobile2");
+        var body = document.body;
+
+        var currentBackgroundIndex = 0;
+        var backgrounds = [
+        "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(213,56,56,1) 46%, rgba(190,24,24,1) 100%)",
+        "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(56,213,61,1) 46%, rgba(30,190,24,1) 100%)"
+        ];
+
+var currentMobile = mobile1;
+
+upBtn.addEventListener("click", function() {
+  if (currentMobile === mobile1) {
+    mobile1.style.opacity = "0";
+    mobile2.style.opacity = "1";
+    currentMobile = mobile2;
+  } else {
+    mobile1.style.opacity = "1";
+    mobile2.style.opacity = "0";
+    currentMobile = mobile1;
+  }
+  
+  // Change background color
+  currentBackgroundIndex++;
+  if (currentBackgroundIndex >= backgrounds.length) {
+    currentBackgroundIndex = 0;
+  }
+  body.style.background = backgrounds[currentBackgroundIndex];
+});
+
+downBtn.addEventListener("click", function() {
+  if (currentMobile === mobile1) {
+    mobile1.style.opacity = "0";
+    mobile2.style.opacity = "1";
+    currentMobile = mobile2;
+  } else {
+    mobile1.style.opacity = "1";
+    mobile2.style.opacity = "0";
+    currentMobile = mobile1;
+  }
+  
+  // Change background color
+  currentBackgroundIndex--;
+  if (currentBackgroundIndex < 0) {
+    currentBackgroundIndex = backgrounds.length - 1;
+  }
+  body.style.background = backgrounds[currentBackgroundIndex];
+});
+
+
+
+</Script>
+  
+</body>
+</html>
